@@ -18,8 +18,12 @@
         </a>
 
         <div class="col-md-3 text-end">
-          <a type="button" href="/users/sign_in" class="btn btn-outline-dark me-2">Login</a>
-          <a type="button" href="/users/sign_up" class="btn btn-dark">Sign-up</a>
+          <% if current_user %>
+            <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-dark" %>
+          <% else %>
+            <a type="button" href="/users/sign_in" class="btn btn-outline-dark me-2">Login</a>
+            <a type="button" href="/users/sign_up" class="btn btn-dark">Sign-up</a>
+          <% end %>
         </div>
       </header>
       <p class="notice text-success"><%= notice %></p>
