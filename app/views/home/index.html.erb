@@ -17,9 +17,9 @@
         <% @invoices.each do |invoice| %>
           <tr>
             <td><%= invoice.user.email %></td>
-            <td><%= invoice.foreign_investment %></td>
-            <td><%= invoice.date_of_invoice.strftime("%Y-%M-%d") %></td>
-            <td><%= invoice.total_amount %></td>
+            <td><%= invoice.foreign_investment  ? 'Yes' : 'No' %></td>
+            <td><%= invoice.date_of_invoice.strftime('%B %e, %Y') %></td>
+            <td><%= number_to_currency(invoice.total_amount) %></td>
           </tr>
         <% end %>
       </tbody>
@@ -29,10 +29,15 @@
 
   <div class="col-4 card">
     <div class="card-body text-success">
-      <h5>Total Rewards Earned:</h5>
+      <h5>Total Rewards Points Earned:</h5>
       <h1>
         <span class="text-success"><%= user_loyalty_points %></span>
       </h1>
+      <hr>
+      <h5>Rewards List</h5>
+      <% if @rewards.present? %>
+        <%= render 'reward_list', rewards: @rewards %>
+      <% end %>
     </div>
   </div>
 </div>

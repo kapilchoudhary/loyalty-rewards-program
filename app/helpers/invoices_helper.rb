@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# app/helpers/invoice_helper.rb
 module InvoicesHelper
   def user_loyalty_points
     current_user.loyalty_points.sum(&:point)

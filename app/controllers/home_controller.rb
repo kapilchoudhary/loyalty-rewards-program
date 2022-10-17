@@ -4,5 +4,6 @@
 class HomeController < ApplicationController
   def index
     @invoices = Invoice.all
+    @rewards = current_user.loyalty_rewards
   end
 end
