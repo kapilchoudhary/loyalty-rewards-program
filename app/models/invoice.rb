@@ -19,8 +19,8 @@ class Invoice < ApplicationRecord
   def reward_loyalty_point
     return if total_amount < 100
 
-    points = (total_amount / 100) * 10 # Standard points
-    points *= 2 if foreign_investment  # Receive 2x the standard points for spend in foreign
+    points = (total_amount / 100) * 10
+    points *= 2 if foreign_investment
 
     user.loyalty_points.create(point: points)
   end
@@ -37,9 +37,10 @@ class Invoice < ApplicationRecord
   def award_movie_ticket_reward
     first_transaction_date = user.invoices.first.created_at
 
-    transcations_amout_within_60_days = Invoice.where(created_at: first_transaction_date..(first_transaction_date + 60.day)).sum(:total_amount)
+    transcation_within_60_days = Invoice.where(created_at: first_transaction_date..(first_transaction_date + 60.day))
+                                        .sum(:total_amount)
 
-    return if transcations_amout_within_60_days < 1000
+    return if transcation_within_60_days < 1000
 
     user.reward_user('movie_ticket_awarded')
     Flag.flag(user, 'movie_ticket_awarded')
