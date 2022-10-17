@@ -1,0 +1,25 @@
+<div class="card">
+  <div id="<%= dom_id invoice %>" class='card-body'>
+    <p>
+      <strong>Total amount:</strong>
+      <%= invoice.total_amount %>
+    </p>
+    <p>
+      <strong>User:</strong>
+      <%= invoice.user.email %>
+    </p>
+    <p>
+      <strong>Date of invoice:</strong>
+      <%= invoice.date_of_invoice %>
+    </p>
+    <p>
+      <strong>Foreign investment:</strong>
+      <%= invoice.foreign_investment %>
+    </p>
+    <div>
+      <%= link_to "Edit this invoice", edit_invoice_path(@invoice), class: "btn-btn-secondary" %> |
+      <%= link_to "Back to invoices", root_path, class: "btn-btn-outline-secondary" %>
+      <%= button_to "Destroy this invoice", @invoice, method: :delete, class: "btn-btn-outline-danger" %>
+    </div>
+  </div>
+</div>

@@ -1,1 +1,36 @@
-<h1>Total Rewards Earned: 0</h1>
+<div class="row">
+  <div class="col-8">
+    <h1>
+      Invoices
+      <%= link_to "New invoice", new_invoice_path, class: "btn btn-dark float-end" %>
+    </h1>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">user</th>
+          <th scope="col">Abroad Investment</th>
+          <th scope="col">Invoice Date</th>
+          <th scope="col">Total Amount</th>
+        </tr>
+      </thead>
+      <tbody class="text-muted">
+        <% @invoices.each do |invoice| %>
+          <tr>
+            <td><%= invoice.user.email %></td>
+            <td><%= invoice.foreign_investment %></td>
+            <td><%= invoice.date_of_invoice.strftime("%Y-%M-%d") %></td>
+            <td><%= invoice.total_amount %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+  </div>
+
+  <div class="col-4 card">
+    <div class="card-body text-success">
+      <h5>Total Rewards Earned:</h5>
+      <h1>0</h1>
+    </div>
+  </div>
+</div>
