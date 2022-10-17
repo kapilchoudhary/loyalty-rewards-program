@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module SpecTestHelper
   include Warden::Test::Helpers
 

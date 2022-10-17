@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
 class Flag < ApplicationRecord
-  LABELS = %w(
+  LABELS = %w[
     coffee_reward
     cash_rebate_awarded
     airport_lounge_access
     movie_ticket_awarded
-  ).freeze
+  ].freeze
 
   belongs_to :user
 

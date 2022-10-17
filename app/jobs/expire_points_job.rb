@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ExpirePointsJob < ApplicationJob
   queue_as :default
 
