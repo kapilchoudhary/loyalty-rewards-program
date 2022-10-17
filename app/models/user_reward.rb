@@ -2,5 +2,5 @@
 
 class UserReward < ApplicationRecord
   belongs_to :user
-  belongs_to :loyalty_rewards
+  belongs_to :loyalty_reward
 end

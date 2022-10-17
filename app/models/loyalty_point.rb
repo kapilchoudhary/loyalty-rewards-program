@@ -5,5 +5,9 @@ class LoyaltyPoint < ApplicationRecord
 
   validates :point, presence: true
 
-  scope :user_points, ->(user) { where(user_id: user.id) }
+  default_scope -> { where(is_expired: false) }
+
+  def self.user_points(user)
+    where(user_id: user.id).sum(:point)
+  end
 end
