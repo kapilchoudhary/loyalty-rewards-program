@@ -17,9 +17,9 @@
       <%= invoice.foreign_investment %>
     </p>
     <div>
-      <%= link_to "Edit this invoice", edit_invoice_path(@invoice), class: "btn-btn-secondary" %> |
+      <%= link_to "Edit this invoice", edit_invoice_path(invoice), class: "btn-btn-secondary" %> |
       <%= link_to "Back to invoices", root_path, class: "btn-btn-outline-secondary" %>
-      <%= button_to "Destroy this invoice", @invoice, method: :delete, class: "btn-btn-outline-danger" %>
+      <%= button_to "Destroy this invoice", invoice, method: :delete, class: "btn-btn-outline-danger" %>
     </div>
   </div>
 </div>
