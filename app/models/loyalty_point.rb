@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# app/models/loyalty_point.rb
 class LoyaltyPoint < ApplicationRecord
   belongs_to :user
 

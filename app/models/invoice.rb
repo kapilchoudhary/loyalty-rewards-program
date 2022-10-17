@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# app/models/invoice.rb
 class Invoice < ApplicationRecord
   belongs_to :user
 

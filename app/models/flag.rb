@@ -1,5 +1,7 @@
+
 # frozen_string_literal: true
 
+# app/models/flag.rb
 class Flag < ApplicationRecord
   LABELS = %w[
     coffee_reward

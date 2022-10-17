@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# app/models/loyalty_reward.rb
 class LoyaltyReward < ApplicationRecord
   REWARD_TYPE = [
     'Free Coffee',
